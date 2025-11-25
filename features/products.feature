@@ -16,6 +16,38 @@ Scenario: The server is running
     Then I should see "Product Catalog Administration" in the title
     And I should not see "404 Not Found"
 
+Scenario: Read a Product
+    When I visit the "Home Page"
+    And I set the "Name" to "Hammer"
+    And I press the "Search" button
+    Then I should see the message "Success"
+
+Scenario: Update a Product
+    When I visit the "Home Page"
+    And I set the "Name" to "Shirts"
+    And I press the "Search" button
+    Then I should see the message "Success"
+    And I shoud see "Black" in the "Description" field
+    When I change "Name" to "T-Shirts"
+    And I press the "Update" button
+    Then I should see the message "Success"
+    When I copy the "Id" field
+    And I press "Clear" button
+    And I paste the "Id" field
+    And I ress the "Retrieve" butten 
+    Then I should see the message "Success"
+    And I Shoud see "T-shirts" in the "Name" field
+
+Scenario: Delete a Product
+    When I visit the "Home Page"
+    And I set the "Name" to "Hammer"
+    And I press the "Search" button
+    Then I should see the message "Success"
+
+Scenario: List all Products
+
+Scenario: Search a Product based on Category
+
 Scenario: Create a Product
     When I visit the "Home Page"
     And I set the "Name" to "Hammer"
