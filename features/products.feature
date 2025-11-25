@@ -18,17 +18,17 @@ Scenario: The server is running
 
 Scenario: Read a Product
     When I visit the "Home Page"
-    And I set the "Name" to "Hammer"
+    And I set the "Name" to "Hat"
     And I press the "Search" button
     Then I should see the message "Success"
 
 Scenario: Update a Product
     When I visit the "Home Page"
-    And I set the "Name" to "Shirts"
+    And I set the "Name" to "Shoes"
     And I press the "Search" button
     Then I should see the message "Success"
-    And I shoud see "Black" in the "Description" field
-    When I change "Name" to "T-Shirts"
+    And I shoud see "Blue shoes" in the "Description" field
+    When I change "Name" to "Black shoes"
     And I press the "Update" button
     Then I should see the message "Success"
     When I copy the "Id" field
@@ -36,11 +36,11 @@ Scenario: Update a Product
     And I paste the "Id" field
     And I ress the "Retrieve" butten 
     Then I should see the message "Success"
-    And I Shoud see "T-shirts" in the "Name" field
+    And I Shoud see "Black shoes" in the "Name" field
 
 Scenario: Delete a Product
     When I visit the "Home Page"
-    And I set the "Name" to "Hammer"
+    And I set the "Name" to "Shirt"
     And I press the "Search" button
     Then I should see the message "Success"
 
